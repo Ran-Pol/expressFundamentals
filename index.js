@@ -2,6 +2,10 @@ const express = require("express");
 
 const app = express();
 
+app.all("/info", (req, res) => {
+  res.send("Server info");
+});
+
 app.get("/hello/:username", (req, res) => {
   console.log(req.query);
   res.send(`Hello ${req.params.username}`);
