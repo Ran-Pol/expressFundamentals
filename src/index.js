@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
+const ejs = require("ejs");
 
 const app = express();
 
@@ -12,6 +13,8 @@ const HomeRoutes = require("./routes/home");
 app.set("appName", "Express Course");
 app.set("port", 3000);
 app.set("case sensitive routing", true);
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // Express Middlewares
 app.use(express.json());
