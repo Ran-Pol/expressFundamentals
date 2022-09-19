@@ -4,7 +4,20 @@ const router = Router();
 
 router.get("/", (req, res) => {
   const title = "My page is made from express";
-  res.render("index", {title});
+
+  const users = [
+    {
+      id: 1,
+      name: "Ryan",
+      lastname: "Perez",
+    },
+    {
+      id: 2,
+      name: "Joe",
+      lastname: "Mc Millan",
+    },
+  ];
+  res.render("index", { title, isActive: true, users });
 });
 
 router.get("/about", (req, res) => {

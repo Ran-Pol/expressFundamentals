@@ -1,3 +1,13 @@
 <%- include('partials/header')%>
 <h1><%=title%></h1>
+<% if (isActive) {%>
+<p>The server is active!</p>
+
+<% }else {%>
+<p>The server is shutdown.</p>
+<% } %>
+<h2>Users List:</h2>
+<ul>
+  <% users.forEach(item=>{%> <li><%=( item.name )%></li> <%}) %>
+</ul>
 <%- include('partials/footer')%>
