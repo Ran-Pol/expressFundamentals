@@ -1,11 +1,13 @@
-function HomeRoutes(app) {
-  app.get("/about", (req, res) => {
-    res.send("about page");
-  });
+const { Router } = require("express");
 
-  app.get("/dashboard", (req, res) => {
-    res.send("Inside the dashboard!");
-  });
-}
+const router = Router();
 
-module.exports = HomeRoutes;
+router.get("/about", (req, res) => {
+  res.send("about page");
+});
+
+router.get("/dashboard", (req, res) => {
+  res.send("Inside the dashboard!");
+});
+
+module.exports = router;

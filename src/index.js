@@ -17,12 +17,9 @@ app.set("case sensitive routing", true);
 app.use(express.json());
 app.use(morgan("tiny"));
 
-
-HomeRoutes(app)
-UserRoutes(app)
-
-
-
+// Express Router()
+app.use(HomeRoutes);
+app.use(UserRoutes);
 
 // Routes
 app.use("/public", express.static(path.join(__dirname, "public")));
